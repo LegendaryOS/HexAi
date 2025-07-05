@@ -1,2 +1,2 @@
 # HexAi
-Hex AI Ai based on Grok API.
+Hex AI written in Dart (Flutter).
