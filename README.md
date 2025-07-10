@@ -1,2 +1,2 @@
 # HexAi
-Hex AI written in Dart (Flutter).
+Hex AI written in JavaScript + HTML + CSS + Elektron + Python.
