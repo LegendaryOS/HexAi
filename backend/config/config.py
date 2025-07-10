@@ -1,16 +1,21 @@
 import os
+from dotenv import load_dotenv
 
-def read_key(file_name):
-    try:
-        with open(f"backend/config/{file_name}", "r") as f:
-            return f.read().strip()
-    except FileNotFoundError:
-        raise Exception(f"Key file {file_name} not found")
+# Load environment variables from .env file
+load_dotenv()
 
-# Load API keys from files or environment variables
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY") or read_key("gemini_key.txt")
-GROK_API_KEY = os.getenv("GROK_API_KEY") or read_key("grok_key.txt")
-SERPAPI_KEY = os.getenv("SERPAPI_KEY") or read_key("serpapi_key.txt")
+# Get API keys from environment variables
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+GROK_API_KEY = os.getenv("GROK_API_KEY")
+SERPAPI_KEY = os.getenv("SERPAPI_KEY")
+
+# Validate API keys
+if not GEMINI_API_KEY:
+    raise Exception("GEMINI_API_KEY not found in .env")
+if not GROK_API_KEY:
+    raise Exception("GROK_API_KEY not found in .env")
+if not SERPAPI_KEY:
+    raise Exception("SERPAPI_KEY not found in .env")
 
 # History file path
 USER_HOME = os.path.expanduser("~")
