@@ -1,0 +1,155 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url('assets/fonts/Roboto-Regular.ttf') format('truetype');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  Bin:1;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+body.dark-mode {
+  background: linear-gradient(135deg, #1f2937, #4b5563);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 50px;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.mode-selector button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 25px;
+  background: #3b82f6;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.mode-selector button.active {
+  background: #1d4ed8;
+  transform: scale(1.05);
+}
+
+.mode-selector button:hover {
+  background: #2563eb;
+  transform: scale(1.03);
+}
+
+#chat-container {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 20px;
+  height: 500px;
+  overflow-y: auto;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#chat-messages {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.message {
+  padding: 15px 20px;
+  border-radius: 15px;
+  max-width: 80%;
+  line-height: 1.5;
+}
+
+.message.user {
+  background: #3b82f6;
+  align-self: flex-end;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.message.ai {
+  background: #1d4ed8;
+  align-self: flex-start;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.message.history {
+  background: #6b7280;
+  align-self: center;
+  font-style: italic;
+}
+
+.input-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+#prompt-input {
+  flex: 1;
+  padding: 15px;
+  border: none;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  resize: none;
+  font-size: 1em;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#prompt-input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+#send-btn, #clear-btn {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 15px;
+  background: #3b82f6;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#send-btn:hover, #clear-btn:hover {
+  background: #1d4ed8;
+  transform: scale(1.03);
+}
+
+.status {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+.status.offline {
+  color: #ef4444;
+}
