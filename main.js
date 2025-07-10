@@ -13,7 +13,7 @@ function createWindow() {
       nodeIntegration: true,
       contextIsolation: false,
     },
-    icon: path.join(__dirname, 'frontend/assets/logo.png'),
+    icon: path.join(__dirname, 'frontend/assets/HexAi.png'),
   });
 
   mainWindow.loadFile('frontend/index.html');
